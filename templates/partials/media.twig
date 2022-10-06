@@ -1,0 +1,15 @@
+<section id="media--left--{{  block.id }}" class="section is-gray">
+    <div class="container">
+        <div class="grid-cols-2">
+            <div class="about--left">
+                <img src="{{ Image(fields.image).src }}" alt="{{ Image(fields.image).alt }}" class="about--image">
+            </div>
+            <div class="about--right">
+                <p class="eyebrow mb-2">{{ fields.tagline }}</p>
+                <h2 class="mb-2">{{ fields.heading }}</h2>
+                <p class="subheading mb-4">{{ fields.description }}</p>
+                <a href="/about-laurie" class="btn btn--secondary">{{ fields.button_text }}</a>
+            </div>
+        </div>
+    </div>
+</section>

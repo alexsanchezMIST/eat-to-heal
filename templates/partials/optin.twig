@@ -1,0 +1,18 @@
+<section id="optin--{{ block.id }}" class="section">
+    <div class="container">
+        <div class="grid-cols-2">
+            <div class="optin--left">
+                <p class="eyebrow mb-2">{{ fields.tagline }}Free Ebook</p>
+                <h1 class="optin--heading mb-2">{{ fields.heading }}Are you "sick and tired" of being sick and tired?</h1>
+                <p class="hero--subheading mb-4">{{ fields.description }}A healthy way of eating based on whole plant foods doesn't have to be hard. This guide will show you how to achieve that without having complicated meal planning.</p>
+                <div class="optin--form--wrapper mb-1">
+                    {% include "partials/optin-form.twig" %}
+                </div>
+                <p class="optin--disclaimer">{{ fields.disclaimer }}We respect your privacy and promise to never send you spam.</p>
+            </div>
+            <div class="optin--right">
+                <img src="{{ theme.path ~ '/static/img/book.webp' }}" alt="" class="optin--image">
+            </div>
+        </div>
+    </div>
+</section>

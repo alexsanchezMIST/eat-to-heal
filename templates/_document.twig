@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="html" lang="{{ site.language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ site.theme.link }}/styles.css" type="text/css" media="screen" />
+    <link rel="author" href="{{ site.theme.link }}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="icon" type="image/x-icon" href="{{ site.theme.link }}/static/img/laurie-favicon.png">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.rss2 | e('esc_url') }}">
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    {{ function('wp_head') }}
+    <title>Document</title>
+</head>
+<body class="body">
+    <a href="#mainContent" class="skip--link">
+        {{  __("Skip to main content", "eat-to-heal") }}
+    </a>
+    {% block layout %}
+        <div class="layout--wrapper">
+            <header class="header">
+                {% block header %}
+                    {% include "partials/header.twig" %}
+                {% endblock %}
+            </header>
+            <main id="main" class="main" aria-label="{{ __("Content", "eat-to-heal") }}">
+                {% block content %}
+                    No <code>{{ "{% block content %}" }}</code> defined for this template.
+                {% endblock %}
+            </main>
+            <footer id="footer" class="footer">
+                {% block footer %}
+                    {% include "partials/footer.twig" %}
+                {% endblock %}
+            </footer>
+            <div class="wp--footer">
+                {{ function("wp_footer") }}
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

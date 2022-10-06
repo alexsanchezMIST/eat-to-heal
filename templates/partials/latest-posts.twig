@@ -1,0 +1,13 @@
+<section class="section">
+    <div class="container">
+        <h2 class="intro--heading mb-4">Latest posts</h2>
+        <div class="grid-cols-3 mb-6">
+            {% for post in posts|slice(0,3) %}
+                {% include "partials/card.twig" %}
+            {% endfor %}
+        </div>
+        <div class="btn--wrapper">
+            <a href="/blog" class="btn btn--primary">Read all posts</a>
+        </div>
+    </div>
+</section>

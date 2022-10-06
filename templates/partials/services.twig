@@ -1,0 +1,10 @@
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="intro--heading mb-4">How to work with me</h2>
+        <div class="grid-cols-3">
+            {% for post in programs %}
+                {% include "partials/service.twig" %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

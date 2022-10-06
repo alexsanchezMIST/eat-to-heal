@@ -1,0 +1,120 @@
+// ********************
+// BREAKPOINTS
+// ********************
+
+$breakpoints: (
+  "xxl": 96.875rem,
+  "xl": 80rem,
+  "lg": 69.5rem,
+  "md": 48rem,
+  "sm": 40rem,
+);
+
+// ********************
+// COLORS
+// ********************
+
+$primary: (
+  "50": hsl(87, 50%, 92%),
+  "100": hsl(88, 50%, 84%),
+  "200": hsl(88, 50%, 76%),
+  "300": hsl(88, 51%, 69%),
+  "400": hsl(88, 51%, 61%),
+  "500": hsl(88, 51%, 53%),
+  "600": hsl(88, 51%, 42%),
+  "700": hsl(88, 51%, 32%),
+  "800": hsl(88, 50%, 21%),
+  "900": hsl(88, 52%, 11%),
+);
+
+$secondary: (
+  "50": hsl(87, 70%, 85%),
+  "100": hsl(88, 71%, 69%),
+  "200": hsl(88, 70%, 54%),
+  "300": hsl(88, 70%, 39%),
+  "400": hsl(88, 70%, 23%),
+  "500": hsl(88, 70%, 8%),
+  "600": hsl(87, 69%, 6%),
+  "700": hsl(86, 67%, 5%),
+  "800": hsl(90, 75%, 3%),
+  "900": hsl(90, 75%, 2%),
+);
+
+$tertiary: (
+  "50": hsl(0, 41%, 90%),
+  "100": hsl(0, 43%, 80%),
+  "200": hsl(0, 42%, 70%),
+  "300": hsl(0, 42%, 60%),
+  "400": hsl(0, 42%, 50%),
+  "500": hsl(0, 42%, 40%),
+  "600": hsl(0, 42%, 32%),
+  "700": hsl(0, 43%, 24%),
+  "800": hsl(0, 41%, 16%),
+  "900": hsl(0, 41%, 8%),
+);
+
+$neutrals: (
+  "50": hsl(210, 40%, 98%),
+  "100": hsl(210, 40%, 96%),
+  "200": hsl(214, 32%, 91%),
+  "300": hsl(213, 27%, 84%),
+  "400": hsl(215, 20%, 65%),
+  "500": hsl(215, 16%, 47%),
+  "600": hsl(215, 19%, 35%),
+  "700": hsl(215, 25%, 27%),
+  "800": hsl(217, 33%, 17%),
+  "900": hsl(222, 47%, 11%),
+);
+
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+// ********************
+// SPACING
+// ********************
+
+$spacing: (
+  "900": clamp(6rem, calc(4.93rem + 2.68vw), 7.5rem),
+  "800": clamp(4rem, calc(3.29rem + 1.79vw), 5rem),
+  "700": clamp(3rem, calc(2.46rem + 1.34vw), 3.75rem),
+  "600": clamp(2rem, calc(1.64rem + 0.89vw), 2.5rem),
+  "500": clamp(1.5rem, calc(1.23rem + 0.67vw), 1.88rem),
+  "400": clamp(1rem, calc(0.82rem + 0.45vw), 1.25rem),
+  "300": clamp(0.75rem, calc(0.62rem + 0.33vw), 0.94rem),
+  "200": clamp(0.5rem, calc(0.41rem + 0.22vw), 0.63rem),
+  "100": clamp(0.25rem, calc(0.21rem + 0.11vw), 0.31rem),
+);
+
+$spacing-pairs: (
+  "from-800-to-900": clamp(4rem, calc(1.5rem + 6.25vw), 7.5rem),
+  "from-700-to-800": clamp(3rem, calc(1.57rem + 3.57vw), 5rem),
+  "from-600-to-700": clamp(2rem, calc(0.75rem + 3.13vw), 3.75rem),
+  "from-500-to-600": clamp(1.5rem, calc(0.79rem + 1.79vw), 2.5rem),
+  "from-400-to-500": clamp(1rem, calc(0.38rem + 1.56vw), 1.88rem),
+  "from-300-to-400": clamp(0.75rem, calc(0.39rem + 0.89vw), 1.25rem),
+  "from-200-to-300": clamp(0.5rem, calc(0.19rem + 0.78vw), 0.94rem),
+  "from-100-to-200": clamp(0.25rem, calc(-0.02rem + 0.67vw), 0.63rem),
+  "from-400-to-900": clamp(1rem, calc(-3.64rem + 11.61vw), 7.5rem),
+  "from-600-to-900": clamp(2rem, calc(-1.93rem + 9.82vw), 7.5rem),
+);
+
+// ********************
+// TYPORGRAPHY
+// ********************
+
+$font-size: (
+  "900": clamp(2.49rem, calc(2.04rem + 1.11vw), 3.11rem),
+  "800": clamp(2.07rem, calc(1.7rem + 0.93vw), 2.59rem),
+  "700": clamp(1.73rem, calc(1.42rem + 0.77vw), 2.16rem),
+  "600": clamp(1.44rem, calc(1.18rem + 0.64vw), 1.8rem),
+  "500": clamp(1.2rem, calc(0.99rem + 0.54vw), 1.5rem),
+  "400": clamp(1rem, calc(0.82rem + 0.45vw), 1.25rem),
+  "300": clamp(0.83rem, calc(0.68rem + 0.37vw), 1.04rem),
+  "200": clamp(0.69rem, calc(0.57rem + 0.31vw), 0.87rem),
+  "100": clamp(0.58rem, calc(0.48rem + 0.26vw), 0.72rem),
+);
+
+$letter-spacing: (
+  "tighter": -0.05em,
+  "tight": -0.025em,
+);

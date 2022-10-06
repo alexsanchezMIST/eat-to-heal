@@ -1,0 +1,53 @@
+<footer id="footer" class="footer">
+    <div class="footer--top py-6">
+        <div class="container">
+            <div class="grid-cols-5">
+                <div class="footer--col">
+                    <img src="{{ theme.path ~'/static/img/logo-white.svg' }}" alt="Encouraging Greens logo" class="footer--logo">
+                </div>
+                <div class="footer--col">
+                    <h6 class="footer--heading mb-2">Links</h6>
+                    <ul class="footer--links">
+                        {% for item in footer_links_menu.get_items %}
+                            <li>
+                                <a class="footer--link" href="{{ item.link }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="footer--col">
+                    <h6 class="footer--heading mb-2">Services</h6>
+                    <ul class="footer--links">
+                        {% for item in footer_services_menu.get_items %}
+                            <li>
+                                <a class="footer--link" href="{{ item.link }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="footer--col">
+                    <h6 class="footer--heading mb-2">Legal</h6>
+                    <ul class="footer--links">
+                        {% for item in footer_legal_menu.get_items %}
+                            <li>
+                                <a class="footer--link" href="{{ item.link }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="footer--col">
+                    <h6 class="footer--heading mb-2">Subscribe</h6>
+                    {% include "partials/footer-form.twig" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer--bottom py-2">
+        <div class="container">
+            <div class="footer--bottom--wrapper">
+                <p class="footer--copyright">Copyright {{"now"|date('Y')}} - Encouraging Greens. All rights reserved.</p>
+                {% include "partials/socials.twig" %}
+            </div>
+        </div>
+    </div>
+</footer>

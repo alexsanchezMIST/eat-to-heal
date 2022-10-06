@@ -1,0 +1,44 @@
+<section id="testimonials" class="section">
+    <div class="container">
+        <div class="testimonials--intro mb-6">
+            <h2 class="testimonials--heading mb-4">Here's what others have said ...</h2>
+            <a class="testimonials--link" href="/testimonials">{{ fields.link_text }}Click here to read all testimonials</a>
+        </div>
+        <div class="testimonial--wrapper swiper">
+            <div class="swiper-wrapper">
+                {% if fields.show_class_testimonials %}
+                    {% for post in class_testimonials %}
+                        <div class="swiper-slide">
+                            {% include "partials/testimonial.twig" %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% for post in testimonials %}
+                        <div class="swiper-slide">
+                            {% include "partials/testimonial.twig" %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        breakpoints: {
+            762: {
+                slidesPerView: 2,
+                centeredSlides: false,
+            },
+            1112: {
+                slidesPerView: 3,
+            },
+        },
+        autoHeight: true,
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+    })
+</script>

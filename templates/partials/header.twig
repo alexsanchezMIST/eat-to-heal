@@ -1,0 +1,21 @@
+<header id="header" class="header" x-data="{ open: false }">
+    <nav class="nav">
+        <div class="nav--container">
+            <div class="nav--wrapper">
+                <a href="/" class="nav--brand">
+                    <img src="{{ theme.path ~ '/static/img/logo.svg' }}" alt="Encouraging Greens logo" class="nav--logo">
+                </a>
+                <div class="nav--right">
+                    {% include "partials/menu.twig" with {'items': menu.get_items} %}
+                    <a href="https://my.practicebetter.io/#/5c2c0256627d790b8ceefe79/bookings?r=5caf4d67627db307840e2367&step=services" target="_blank" class="btn btn--small"><span class="phone"></span>Book a Call</a>
+                </div>
+                <div class="nav--hamburger" @click="open = true">
+                    <img src="{{ theme.path ~'/static/img/menu.svg' }}" alt="Mobile menu icon" class="nav--hamburger--icon">
+                </div>
+                <div class="nav--mobile--menu--wrapper" x-show="open" @click.outside="open = false">
+                    {% include "partials/mobile-menu.twig" with {'items': menu.get_items} %}
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

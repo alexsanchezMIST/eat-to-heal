@@ -1,0 +1,19 @@
+{% extends "_document.twig" %}
+
+{% block content %}
+
+<section id="posts" class="section">
+    <div class="container">
+        {% if posts|length > 0 %}
+            <div class="grid-cols-3">
+                {% for post in posts %}
+                    {% include "partials/card.twig" %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

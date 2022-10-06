@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="19px" viewBox="0 0 18 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Leaf</title>
+    <g id="Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Services" transform="translate(-338.000000, -2719.000000)">
+            <g id="Blog-#11" transform="translate(0.000000, 1719.000000)">
+                <g id="Blurb" transform="translate(335.000000, 100.000000)">
+                    <g id="Group-8" transform="translate(0.000000, 512.000000)">
+                        <g id="Group-10" transform="translate(0.000000, 182.000000)">
+                            <g id="Group-7" transform="translate(0.000000, 200.000000)">
+                                <g id="Leaf" transform="translate(0.000000, 3.000000)">
+                                    <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                                    <path d="M21,3 L21,5 C21,14.627 15.627,19 9,19 L7.098,19 C7.31,15.988 8.248,14.165 10.696,11.999 C11.9,10.934 11.798,10.319 11.205,10.672 C7.121,13.102 5.093,16.386 5.003,21.63 L5,22 L3,22 C3,20.637 3.116,19.4 3.346,18.268 C3.116,16.974 3,15.218 3,13 C3,7.477 7.477,3 13,3 C15,3 17,4 21,3 Z" id="Path" fill="#8BC34A" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

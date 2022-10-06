@@ -1,0 +1,1017 @@
+@import "preflight";
+@import "variables";
+@import "utilities";
+@import "font-face";
+
+// ********************
+// GLOBALS
+// ********************
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+.logged-in.admin-bar {
+  header {
+    margin-top: 32px;
+  }
+}
+
+// ********************
+// HEADINGS
+// ********************
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.05;
+  color: map-get($neutrals, "900");
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: map-get($font-size, "800");
+  letter-spacing: map-get($letter-spacing, "tighter");
+}
+
+h2 {
+  font-size: map-get($font-size, "700");
+  letter-spacing: map-get($letter-spacing, "tight");
+}
+
+h3 {
+  font-size: map-get($font-size, "600");
+}
+
+h4 {
+  font-size: map-get($font-size, "500");
+}
+
+h5 {
+  font-size: map-get($font-size, "400");
+}
+
+h6 {
+  font-size: map-get($font-size, "400");
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+// ********************
+// PARAGRAPHS
+// ********************
+
+p,
+li {
+  font-size: map-get($font-size, "300");
+  line-height: 1.33;
+  color: map-get($neutrals, "500");
+}
+
+p strong,
+li strong {
+  font-weight: 700;
+  color: map-get($neutrals, "800");
+}
+
+.prose li {
+  line-height: 1.33;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: map-get($spacing, "600");
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    background-image: url("static/img/leaf.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}
+
+ul li:not(last-of-type) {
+  margin-bottom: map-get($spacing, "200");
+}
+
+.prose {
+  width: min(100%, 48.125rem);
+  margin-inline: auto;
+
+  h2,
+  h3 {
+    margin-top: map-get($spacing, "600");
+    margin-bottom: map-get($spacing, "400");
+  }
+
+  > p:not(last-of-type) {
+    margin-bottom: map-get($spacing, "200");
+  }
+}
+
+// ********************
+// LAYOUT
+// ********************
+
+main {
+  margin-top: 3.75rem;
+}
+
+.container {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  max-width: map-get($breakpoints, "xxl");
+  margin-inline: auto;
+  padding-inline: map-get($spacing-pairs, "from-400-to-900");
+}
+
+.section {
+  position: relative;
+  padding-block: map-get($spacing-pairs, "from-600-to-900");
+
+  &.is-gray {
+    background-color: map-get($neutrals, "50");
+  }
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  gap: map-get($spacing, "800");
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  align-items: start;
+  gap: map-get($spacing, "400");
+
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.grid-cols-5 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  gap: map-get($spacing, "600");
+
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+// ********************
+// HERO
+// ********************
+
+.hero--wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.hero--background {
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    object-fit: cover;
+    width: 70%;
+    height: 30rem;
+    object-fit: cover;
+  }
+}
+
+.hero--right {
+  margin-top: -10%;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $white;
+  width: min(100%, 35.625rem);
+  padding-block: map-get($spacing, "700");
+  padding-inline: map-get($spacing, "500");
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    margin-top: unset;
+  }
+}
+
+.eyebrow {
+  font-size: map-get($font-size, "300");
+  line-height: 1;
+  font-weight: 700;
+  color: map-get($primary, "500");
+  text-transform: uppercase;
+}
+
+.hero--subheading {
+  font-size: map-get($font-size, "400");
+  color: map-get($neutrals, "400");
+}
+
+// ********************
+// BUTTONS
+// ********************
+
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: map-get($spacing, "200");
+  padding-block: map-get($spacing, "400");
+  padding-inline: map-get($spacing, "500");
+  background-color: map-get($tertiary, "500");
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba($black, 0.1), 0 2px 4px -2px rgba($black, 0.1);
+  cursor: pointer;
+  font-size: map-get($font-size, "300");
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  color: $white;
+  text-transform: uppercase;
+  white-space: no-wrap;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: map-get($tertiary, "400");
+  }
+
+  &:active {
+    background-color: map-get($tertiary, "600");
+  }
+
+  & + & {
+    margin-left: map-get($spacing, "300");
+  }
+}
+
+.btn--small {
+  padding-block: map-get($spacing, "200");
+  padding-inline: map-get($spacing, "300");
+  box-shadow: 0 1px 3px 0 rgba($black, 0.1), 0 1px 2px -1px rgba($black, 0.1);
+  font-size: map-get($font-size, "300");
+}
+
+.btn--secondary {
+  background-color: $white;
+  border-color: map-get($tertiary, "500");
+  color: map-get($tertiary, "500");
+
+  &:hover {
+    background-color: $white;
+    border-color: map-get($tertiary, "400");
+    color: map-get($tertiary, "400");
+  }
+
+  &:active {
+    background-color: $white;
+    border-color: map-get($tertiary, "600");
+    color: map-get($tertiary, "600");
+  }
+}
+
+// ********************
+// HEADER
+// ********************
+
+#header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  height: 3.75rem;
+  width: 100%;
+  background-color: $white;
+  border-bottom: 1px solid map-get($neutrals, "50");
+  box-shadow: 0 4px 6px -1px rgba($black, 0.1), 0 2px 4px -2px rgba($black, 0.1);
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+}
+
+.nav--container {
+  @extend .container;
+  height: 100%;
+}
+
+.nav--wrapper,
+.nav--menu,
+.nav--right {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.nav--wrapper,
+.nav--menu,
+.nav--right {
+  justify-content: center;
+}
+
+.nav--wrapper {
+  justify-content: space-between;
+}
+
+.nav--wrapper,
+.nav--menu {
+  align-items: center;
+}
+
+.nav--menu {
+  gap: map-get($spacing, "600");
+}
+
+.nav--right {
+  display: none;
+
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    display: flex;
+    align-items: flex-end;
+    gap: map-get($spacing, "600");
+  }
+}
+
+.nav--brand {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 3.25rem;
+}
+
+.nav--logo {
+  width: auto;
+  height: 100%;
+}
+
+.nav--hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.125rem;
+  box-shadow: 0 1px 3px rgba($black, 0.1), 0 1px 2px -1px rgba($black, 0.1);
+  cursor: pointer;
+
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    display: none;
+  }
+}
+
+.nav--mobile--menu--wrapper {
+  position: absolute;
+  top: 3.75rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding-block: map-get($spacing, "700");
+  padding-inline: map-get($spacing, "600");
+  background-color: $white;
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1),
+    0 4px 6px -4px rgba($black, 0.1);
+}
+
+.nav--link {
+  font-size: map-get($font-size, "300");
+  font-weight: 600;
+  line-height: 1;
+  color: map-get($neutrals, "400");
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: map-get($primary, "500");
+  }
+}
+
+.nav--mobile--menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    font-size: map-get($font-size, "400");
+  }
+}
+
+// ********************
+// FOOTER
+// ********************
+
+footer {
+  background-color: map-get($secondary, "800");
+}
+
+.footer--col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.footer--logo {
+  width: auto;
+  height: 3rem;
+}
+
+.footer--heading {
+  color: $white;
+}
+
+.footer--copyright {
+  color: rgba($white, 0.5);
+}
+
+.footer--link {
+  font-size: map-get($font-size, "300");
+  line-height: 1;
+  color: $white;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.footer--bottom--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ********************
+// CTA
+// ********************
+
+#cta {
+  background-image: url("static/img/cta-background.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: linear-gradient(
+    to-bottom,
+    map-get($primary, "400"),
+    map-get($primary, "500")
+  );
+  background-color: map-get($primary, "500");
+}
+
+.cta--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 48.125rem);
+  margin-inline: auto;
+}
+
+.cta--heading {
+  font-size: map-get($font-size, "800");
+  font-weight: 700;
+  color: $white;
+  text-align: center;
+}
+
+// ********************
+// CARD
+// ********************
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba($black, 0.1), 0 2px 4px -2px rgba($black, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+
+    .card--heading {
+      color: map-get($primary, "500");
+    }
+  }
+}
+
+.card--top {
+  width: 100%;
+  height: 15rem;
+}
+
+.card--image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--bottom {
+  padding-block: map-get($spacing, "600");
+  padding-inline: map-get($spacing, "500");
+}
+
+.card--heading {
+  transition: color 0.3 ease-in-out;
+}
+
+.card--excerpt {
+  color: map-get($neutrals, "400");
+}
+
+.card--link {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: map-get($primary, "500");
+}
+
+.arrow--right {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  background-image: url("static/img/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.service--card {
+  @extend .card;
+  text-align: center;
+}
+
+// ********************
+// POST
+// ********************
+
+.intro--wrapper {
+  width: min(100%, 48.125rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.intro--heading {
+  text-align: center;
+}
+
+.intro--image {
+  width: 100%;
+  margin-inline: auto;
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+}
+
+// ********************
+// TESTIMONIALS
+// ********************
+
+.testimonials--intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials--link {
+  font-weight: 500;
+  color: map-get($primary, "500");
+}
+
+.testimonial--wrapper {
+  padding-block: map-get($spacing, "200");
+}
+
+.testimonial {
+  position: relative;
+  z-index: 100;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding-block: map-get($spacing, "500");
+  padding-inline: map-get($spacing, "400");
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.5rem;
+  background-color: $white;
+  box-shadow: 0 4px 6px -1px rgba($black, 0.1), 0 2px 4px -2px rgba($black, 0.1);
+
+  ::before {
+    content: "";
+    position: absolute;
+    z-index: 50;
+    top: 2.5%;
+    left: 2.5%;
+    width: 3rem;
+    height: 3rem;
+    background-image: url("static/img/quotation-marks.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.05;
+  }
+}
+
+.testimonial--content {
+  font-size: map-get($font-size, "300");
+  line-height: 1.33;
+  color: map-get($neutrals, "400");
+}
+
+.testimonial--title {
+  display: block;
+  width: 100%;
+  font-size: map-get($font-size, "300");
+  line-height: 1;
+  font-weight: 600;
+  color: map-get($neutrals, "800");
+  text-align: end;
+}
+
+.testimonials--grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  gap: map-get($spacing, "600");
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+// ********************
+// SOCIALS
+// ********************
+
+.social--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: map-get($spacing, "300");
+}
+
+.social--link {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.social--logo {
+  width: 100%;
+  height: 100%;
+}
+
+// ********************
+// SERVICES
+// ********************
+
+.services--wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: map-get($spacing, "300");
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+
+// ********************
+// FORMS
+// ********************
+
+._form-label {
+  display: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  height: auto;
+  padding-block: map-get($spacing, "300");
+  padding-inline: map-get($spacing, "400");
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba($black, 0.1), 0 1px 2px -1px rgba($black, 0.1);
+
+  &::placeholder {
+    color: map-get($neutrals, "400");
+  }
+}
+
+input[type="submit"],
+button[type="submit"] {
+  @extend .btn;
+
+  width: 100%;
+  font-size: map-get($font-size, "300");
+  font-weight: 600;
+}
+
+.form--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: map-get($spacing, "300");
+}
+
+.phone,
+.send,
+.download {
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.send {
+  background-image: url("static/img/paper-airplane.svg");
+}
+
+.phone {
+  background-image: url("static/img/phone.svg");
+}
+
+.download {
+  background-image: url("static/img/download.svg");
+}
+
+// ********************
+// OPTIN
+// ********************
+
+.optin--heading {
+  font-size: map-get($font-size, "900");
+  font-weight: 600;
+}
+
+.optin--disclaimer {
+  width: 100%;
+  font-size: map-get($font-size, "200");
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.optin--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.optin--form--wrapper {
+  width: min(100%, 35.625rem);
+}
+
+.optin--right {
+  background-image: url("static/img/plate.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  filter: drop-shadow(0 4px 6px rgba($black, 0.4));
+}
+
+.optin--image {
+  width: 65%;
+  height: auto;
+  margin-inline: auto;
+  box-shadow: 0 20px 25px -5px rgba($black, 0.1),
+    0 8px 10px -6px rgba($black, 0.1);
+}
+
+// ********************
+// EMBED
+// ********************
+
+.embed--wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1),
+    0 4px 6px -4px rgba($black, 0.1);
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ********************
+// ABOUT
+// ********************
+
+.about--image {
+  width: 100%;
+  height: 25rem;
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1),
+    0 4px 6px -4px rgba($black, 0.1);
+  object-fit: cover;
+}
+
+.about--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+// ********************
+// LATEST
+// ********************
+
+.btn--wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+// ********************
+// MINI-OPTIN
+// ********************
+
+.mini--optin {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(1 minmax(0, 1fr));
+  gap: map-get($spacing, "400");
+  place-items: center;
+  padding-block: map-get($spacing, "600");
+  padding-inline: map-get($spacing, "600");
+  border: 1px solid map-get($neutrals, "200");
+  border-radius: 0.5rem;
+}
+
+.mini--optin--heading {
+  font-weight: 400;
+}
+
+.mini--optin--content {
+  font-size: map-get($font-size, "300");
+}
+
+.mini--optin--image {
+  width: auto;
+  height: 12rem;
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+}
+
+// ********************
+// LOGOS
+// ********************
+
+.logos--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: map-get($spacing, "600");
+}
+
+.logo {
+  width: auto;
+  height: 6rem;
+}
+
+// ********************
+// PAGINATION
+// ********************
+
+.pagination--block,
+.pagination {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination--block {
+  background-color: map-get($neutrals, "50");
+}
+
+.pagination {
+  margin-inline: auto;
+  gap: map-get($spacing, "400");
+}
+
+button:disabled {
+  font-size: clamp(0.75rem, calc(0.62rem + 0.33vw), 0.94rem);
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+// ********************
+// DISCLAIMER
+// ********************
+
+.disclaimer {
+  background-color: rgba(map-get($primary, "100"), 0.5);
+  border: 1px solid map-get($primary, "500");
+  border-radius: 0.5rem;
+  padding-block: map-get($spacing, "600");
+  padding-inline: map-get($spacing, "400");
+  font-size: map-get($font-size, "300");
+}

@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class="hero section">
+	<div class="container">
+		<div class="hero--wrapper">
+			{% if post.thumbnail %}
+				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="hero--background">
+			{% endif %}
+			<div class="hero--right">
+				<p class="eyebrow mb-1">{{ post.meta('eyebrow') }}</p>
+				<h1 class="hero--heading mb-2">{{ post.title }}</h1>
+				<p class="hero--subheading mb-4">{{ post.meta('subheading') }}</p>
+				{% if post.meta('has_button') %}
+					<a href="{{ post.meta('button_link') }}" class="btn btn--primary">{{ post.meta('button_label') }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{{post.content}}
+
+{% include "partials/testimonials.twig" %}
+
+{% include "partials/services.twig" %}
+
+{% endblock %}

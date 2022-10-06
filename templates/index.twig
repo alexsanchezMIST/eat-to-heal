@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section class="section">
+		<div class="container">
+			<div class="intro--wrapper">
+				<h1 class="hero--heading">{{ post.title }}.</h1>
+				<p class="hero--subheading">{{ post.content }}</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="grid" class="section is-gray">
+		<div class="container">
+			<div class="grid-cols-3">
+				{% for post in posts %}
+					{% include "partials/card.twig" %}
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	{% include 'partials/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock %}

@@ -1,0 +1,12 @@
+<a class="card" href="{{ post.link }}">
+    {% if post.thumbnail %}
+        <div class="card--top">
+            <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="card--image">
+        </div>
+    {% endif %}
+    <div class="card--bottom">
+        <h4 class="card--heading mb-2">{{ post.title }}</h4>
+        <p class="card--excerpt mb-4">{{ post.content|excerpt(20) }}</p>
+        <div class="card--link">Read more<span class="arrow--right"></span></div>
+    </div>
+</a>

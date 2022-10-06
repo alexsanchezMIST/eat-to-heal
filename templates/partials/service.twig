@@ -1,0 +1,13 @@
+<a href="{{ post.link }}" class="service--card">
+    {% if post.thumbnail %}
+        <div class="card--top">
+            <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="card--image">
+        </div>
+    {% endif %}
+    <div class="card--bottom">
+        <p class="eyebrow mb-2">{{ post.meta('eyebrow') }}</p>
+        <h3 class="card--heading mb-2">{{ post.title }}</h3>
+        <p class="card--excerpt mb-4">{{ post.meta('subheading') }}</p>
+        <div class="card--link">Learn more<span class="arrow--right"></span></div>
+    </div>
+</a>

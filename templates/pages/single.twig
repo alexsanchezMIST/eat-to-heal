@@ -1,0 +1,11 @@
+{% extends "_document.twig" %}
+
+{% block content %}
+<section id="post--{{ post.id }}" class="section">
+    <div class="container">
+        <article class="prose">
+            {{ post.content }}
+        </article>
+    </div>
+</section>
+{% endblock %}

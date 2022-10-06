@@ -1,0 +1,29 @@
+{% if posts.pagination.pages is not empty %}
+    <nav class="pagination--block py-4">
+        <ul class="pagination">
+
+            {# Previous #}
+            {% if posts.pagination.prev %}
+                <li class="prev">
+                    <a href="{{ posts.pagination.prev.link }}" class="btn btn--secondary">Previous</a>
+                </li>
+            {% else %}
+                <li class="prev btn disabled">
+                    <button disabled>Previous</button>
+                </li>
+            {% endif %}
+
+            {# Next #}
+            {% if posts.pagination.next %}
+                <li class="next">
+                    <a href="{{ posts.pagination.next.link }}" class="btn btn--secondary">Next</a>
+                </li>
+            {% else %}
+                <li class="next btn disabled">
+                    <button disabled>Next</button>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

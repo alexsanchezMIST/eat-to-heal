@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section id="intro" class="section">
+	<div class="container">
+		<div class="intro--wrapper">
+			<h1 class="intro--heading mb-4">{{ post.title }}</h1>
+			{% if post.thumbnail %}
+				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="intro--image">
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+<section id="post" class="section">
+	<div class="content-wrapper">
+		<article class="prose post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			{{post.content}}
+			{% include "partials/optin-mini.twig" %}
+		</article>
+	</div>
+</section>
+{% endblock %}

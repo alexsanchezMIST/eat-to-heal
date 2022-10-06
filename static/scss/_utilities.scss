@@ -1,0 +1,119 @@
+// ********************
+// MARGIN-INLINE
+// ********************
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+// ********************
+// MARGIN-TOP
+// ********************
+
+.mt-1 {
+  margin-top: map-get($spacing-pairs, "from-100-to-200");
+}
+
+.mt-2 {
+  margin-top: map-get($spacing-pairs, "from-200-to-300");
+}
+
+.mt-3 {
+  margin-top: map-get($spacing-pairs, "from-300-to-400");
+}
+
+.mt-4 {
+  margin-top: map-get($spacing-pairs, "from-400-to-500");
+}
+
+.mt-5 {
+  margin-top: map-get($spacing-pairs, "from-500-to-600");
+}
+
+.mt-6 {
+  margin-top: map-get($spacing-pairs, "from-600-to-700");
+}
+
+.mt-7 {
+  margin-top: map-get($spacing-pairs, "from-700-to-800");
+}
+
+.mt-8 {
+  margin-top: map-get($spacing-pairs, "from-800-to-900");
+}
+
+// ********************
+// MARGIN-BOTTM
+// ********************
+
+.mb-1 {
+  margin-bottom: map-get($spacing-pairs, "from-100-to-200");
+}
+
+.mb-2 {
+  margin-bottom: map-get($spacing-pairs, "from-200-to-300");
+}
+
+.mb-3 {
+  margin-bottom: map-get($spacing-pairs, "from-300-to-400");
+}
+
+.mb-4 {
+  margin-bottom: map-get($spacing-pairs, "from-400-to-500");
+}
+
+.mb-5 {
+  margin-bottom: map-get($spacing-pairs, "from-500-to-600");
+}
+
+.mb-6 {
+  margin-bottom: map-get($spacing-pairs, "from-600-to-700");
+}
+
+.mb-7 {
+  margin-bottom: map-get($spacing-pairs, "from-700-to-800");
+}
+
+.mb-8 {
+  margin-bottom: map-get($spacing-pairs, "from-800-to-900");
+}
+
+// ********************
+// PADDING-BLOCK
+// ********************
+
+.py-1 {
+  padding-block: map-get($spacing-pairs, "from-100-to-200");
+}
+
+.py-2 {
+  padding-block: map-get($spacing-pairs, "from-200-to-300");
+}
+
+.py-3 {
+  padding-block: map-get($spacing-pairs, "from-300-to-400");
+}
+
+.py-4 {
+  padding-block: map-get($spacing-pairs, "from-400-to-500");
+}
+
+.py-5 {
+  padding-block: map-get($spacing-pairs, "from-500-to-600");
+}
+
+.py-6 {
+  padding-block: map-get($spacing-pairs, "from-600-to-700");
+}
+
+.py-7 {
+  padding-block: map-get($spacing-pairs, "from-700-to-800");
+}
+
+.py-8 {
+  padding-block: map-get($spacing-pairs, "from-800-to-900");
+}
+
+.is-hidden {
+  display: none !important;
+}
