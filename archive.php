@@ -36,5 +36,6 @@ if ( is_day() ) {
 }
 
 $context['posts'] = new Timber\PostQuery();
+$context['current'] = get_queried_object();
 
 Timber::render( $templates, $context );

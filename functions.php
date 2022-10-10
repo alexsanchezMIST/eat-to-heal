@@ -167,11 +167,6 @@ class StarterSite extends Timber\Site {
 		$post_args = array(
 			'post_type' => 'post',
 			'post_status' => 'publish',
-			'orderby' => 'ID',
-			'order' => 'DESC',
-			'posts_per_page' => '9',
-			'perm' => 'readable',
-			'paged' => $paged,
 		);
 
 		$resource_args = array(
@@ -182,6 +177,7 @@ class StarterSite extends Timber\Site {
 		);
 
 		$testimonial_args = array(
+			'numberposts' => -1,
 			'post_type' => 'testimonial',
 			'post_status' => 'publish',
 			'orderby' => 'rand',
@@ -189,6 +185,7 @@ class StarterSite extends Timber\Site {
 		);
 
 		$class_testimonial_args = array(
+			'numberposts' => -1,
 			'post_type' => 'testimonial',
 			'post_status' => 'publish',
 			'orderby' => 'rand',
